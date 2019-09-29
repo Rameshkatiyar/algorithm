@@ -1,7 +1,31 @@
 package hashmap;
 
-public class Node<K,V> {
-    K key;
-    V value;
-    Node<K,V> next;
+public class LinkNode<K,V> {
+    private K key;
+    private V value;
+    private LinkNode<K,V> next = null;
+
+    public K getKey() {
+        return key;
+    }
+
+    public void setKey(K key) {
+        this.key = key;
+    }
+
+    public V getValue() {
+        return value;
+    }
+
+    public void setValue(V value) {
+        this.value = value;
+    }
+
+    public LinkNode<K, V> getNext() {
+        return next;
+    }
+
+    public void setNext(LinkNode<K, V> next) {
+        this.next = next;
+    }
 }
