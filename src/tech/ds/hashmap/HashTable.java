@@ -1,4 +1,4 @@
-package hashmap;
+package tech.ds.hashmap;
 
 public class HashTable<K,V> {
     private int count;

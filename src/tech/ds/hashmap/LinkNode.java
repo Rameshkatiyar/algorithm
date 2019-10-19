@@ -1,4 +1,4 @@
-package hashmap;
+package tech.ds.hashmap;
 
 public class LinkNode<K,V> {
     private K key;
