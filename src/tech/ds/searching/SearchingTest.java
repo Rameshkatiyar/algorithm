@@ -7,7 +7,7 @@ public class SearchingTest {
     public static void main(String args[]){
         int[] input = TestDataProvider.getOrderedNumberArray(10);
         int data = 3;
-        PrintUtil.printArray(input);
+        PrintUtil.printArray("Input", input);
 
         long startTime1 = System.nanoTime();
         int recIndex = BinarySearch.searchIteratively(input, data);
