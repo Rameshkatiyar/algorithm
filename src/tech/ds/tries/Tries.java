@@ -1,4 +1,4 @@
-package tech.ds.strings;
+package tech.ds.tries;
 
 import java.util.LinkedList;
 import java.util.Map;
@@ -15,11 +15,14 @@ public class Tries {
         this.rootNode = new TrieNode();
     }
 
+    /**
+     * Insert Complexity: O(l) = length of text
+     * @param text
+     */
     public void insert(String text){
         TrieNode nodePointer = rootNode;
-        int index;
-        int lengthOfText = text.length();
-        for (index=0; index< lengthOfText; index++){
+
+        for (int index=0; index< text.length(); index++){
             char c = text.charAt(index);
             if (isTrieNodeContainChar(nodePointer, c)){
                 TrieNode childNode = nodePointer.getCharNodeMap().get(c);
@@ -31,15 +34,29 @@ public class Tries {
                 nodePointer = newNode;
             }
         }
-        if (index == lengthOfText){
-            nodePointer.setEndOfWord(true);
-        }
+        nodePointer.setEndOfWord(true);
     }
 
+    /**
+     * Search Complexity: O(l) = length of text
+     * @param text
+     * @return
+     */
     public boolean search(String text){
-        return false;
+        TrieNode nodePointer = rootNode;
+
+        for (int index=0; index< text.length(); index++){
+            char c = text.charAt(index);
+            if (isTrieNodeContainChar(nodePointer, c)){
+                nodePointer = nodePointer.getCharNodeMap().get(c);
+            }else {
+                return false;
+            }
+        }
+        return nodePointer.getEndOfWord();
     }
 
+    //TODO
     public boolean delete(String text){
         return false;
     }
@@ -69,7 +86,7 @@ public class Tries {
 
     private void printNode(TrieNode trieNode){
         Map<Character, TrieNode> charNodeMap = trieNode.getCharNodeMap();
-        System.out.print("Node: "+trieNode.hashCode()+" Characters: {");
+        System.out.print("Node: "+trieNode.hashCode()+" CharNodeMap: {");
         charNodeMap.keySet().stream()
                 .forEach(
                         character -> {

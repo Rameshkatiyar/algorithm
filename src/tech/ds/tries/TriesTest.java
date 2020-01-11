@@ -1,4 +1,4 @@
-package tech.ds.strings;
+package tech.ds.tries;
 
 public class TriesTest {
     public static void main(String args[]){
@@ -6,6 +6,9 @@ public class TriesTest {
         tries.insert("abc");
         tries.insert("abgl");
         tries.insert("cdf");
+        //Traverse
         tries.traversTries(tries.getRootNode());
+        //Searching
+        System.out.println(tries.search("abc"));
     }
 }

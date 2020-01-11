@@ -1,4 +1,4 @@
-package tech.ds.strings;
+package tech.ds.tries;
 
 import java.util.HashMap;
 import java.util.Map;
