@@ -1,6 +1,7 @@
 package tech.ds.strings;
 
 /**
+ * Manacher's Algorithm
  * Very Important
  * Algorithm: Longest Palindromic Substring O(N) Manacher's Algorithm
  * Video: https://www.youtube.com/watch?v=nbTSfrEfo6M
