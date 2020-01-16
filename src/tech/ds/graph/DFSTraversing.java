@@ -58,39 +58,8 @@ public class DFSTraversing {
     }
 
     public static void main(String args[]){
-        Graph testGraph = createTestGraph();
+        Graph testGraph = GraphTest.getGraphExample1();
         testGraph.printGraph();
         traverse(testGraph, "A");
-    }
-
-    public static Graph createTestGraph() {
-        Graph graph = new Graph();
-
-        graph.addVertex("A");
-        graph.addVertex("B");
-        graph.addVertex("C");
-        graph.addVertex("D");
-        graph.addVertex("E");
-        graph.addVertex("F");
-        graph.addVertex("G");
-        graph.addVertex("H");
-
-        graph.addEdge("A", "B", 1);
-        graph.addEdge("B", "C", 1);
-        graph.addEdge("B", "H", 1);
-        graph.addEdge("B", "A", 1);
-        graph.addEdge("C", "B", 1);
-        graph.addEdge("C", "E", 1);
-        graph.addEdge("C", "D", 1);
-        graph.addEdge("D", "C", 1);
-        graph.addEdge("H", "B", 1);
-        graph.addEdge("H", "E", 1);
-        graph.addEdge("E", "C", 1);
-        graph.addEdge("E", "H", 1);
-        graph.addEdge("E", "F", 1);
-        graph.addEdge("E", "G", 1);
-        graph.addEdge("G", "E", 1);
-        graph.addEdge("F", "E", 1);
-        return graph;
     }
 }
