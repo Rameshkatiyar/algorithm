@@ -1,13 +1,29 @@
 package tech.ds.graph;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
+/**
+ * Here we represent the graph in the form of adjacency-list.
+ */
 public class Graph {
 
     private Map<Vertex, List<Vertex>> adjacencyVertices;
 
     public Graph(){
         adjacencyVertices = new HashMap<>();
+    }
+
+    public List<Vertex> getAdjacencyVertices(String label){
+        Optional<Vertex> vertexOptional = getVertexByLabel(label);
+        if (!vertexOptional.isPresent()){
+            return null;
+        }
+        return adjacencyVertices.get(vertexOptional.get());
+    }
+
+    public List<Vertex> getAllVertexOfGraph(){
+        return adjacencyVertices.keySet().stream().collect(Collectors.toList());
     }
 
     public Boolean addEdge(String fromLabel, String toLabel, int weight){
@@ -52,7 +68,7 @@ public class Graph {
         return false;
     }
 
-    private Optional<Vertex> getVertexByLabel(String label){
+    public Optional<Vertex> getVertexByLabel(String label){
         Optional<Vertex> vertexOptional = adjacencyVertices.keySet().stream()
                 .filter(
                         vertex -> vertex.getLabel().equalsIgnoreCase(label)

@@ -9,7 +9,7 @@ public class GraphTest {
         graph.printGraph();
     }
 
-    private static Graph createTestGraph() {
+    public static Graph createTestGraph() {
         Graph graph = new Graph();
 
         graph.addVertex("1");
