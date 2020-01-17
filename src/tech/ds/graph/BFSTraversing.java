@@ -25,7 +25,7 @@ public class BFSTraversing {
         visitedMap.put(top, true);
         System.out.println("Visited: "+top);
 
-        while (!vertexQueue.isEmpty()){
+        while (!vertexQueue.isEmpty()){ //O(V)
             top = vertexQueue.poll();
             List<Vertex> adjacencyVertices = graph.getAdjacencyVertices(top);
 
