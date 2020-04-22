@@ -19,15 +19,15 @@ public class TreeTraversing {
     public static void preOrderTravers(Node root){
         if (root != null){
             System.out.print(root.value + " ");
-            inOrderTravers(root.left);
-            inOrderTravers(root.right);
+            preOrderTravers(root.left);
+            preOrderTravers(root.right);
         }
     }
 
     public static void postOrderTravers(Node root){
         if (root != null){
-            inOrderTravers(root.left);
-            inOrderTravers(root.right);
+            postOrderTravers(root.left);
+            postOrderTravers(root.right);
             System.out.print(root.value + " ");
         }
     }

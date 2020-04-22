@@ -2,12 +2,31 @@ package tech.ds.Tree;
 
 public class BinaryTreeTest {
     public static void main(String[] args) {
-//        BinaryTree binaryTree1 = getBinaryTree1();
+//        BinaryTree binaryTree1 = getBinaryTree();
 //        traverseTree(binaryTree1.getRoot());
 
-        int[] a = new int[]{10, 6, 12, 8, 15, 11, 13, 1, 3};
-        BinaryTree bst = BinaryTree.buildBST(a);
+        BinarySearchTree bst = getBinarySearchTree();
         traverseTree(bst.getRoot());
+
+//        Node searched = bst.search(bst.getRoot(), 13);
+//        System.out.println("Found Node: "+searched);
+
+        bst.deleteTwoChildNode(bst.getRoot(), 12);
+        traverseTree(bst.getRoot());
+    }
+
+    private static BinarySearchTree getBinarySearchTree() {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(10);
+        bst.insert(6);
+        bst.insert(12);
+        bst.insert(8);
+        bst.insert(15);
+        bst.insert(11);
+        bst.insert(13);
+        bst.insert(1);
+        bst.insert(3);
+        return bst;
     }
 
     private static void traverseTree(Node root){
@@ -28,15 +47,16 @@ public class BinaryTreeTest {
         System.out.println("\n");
     }
 
-    private static BinaryTree getBinaryTree1() {
+    private static BinaryTree getBinaryTree() {
         BinaryTree bt = new BinaryTree(1);
-        Node root = bt.getRoot();
 
-        Node node2 = bt.addLeft(root, 2);
+        Node node1 = bt.getRoot();
+
+        Node node2 = bt.addLeft(node1, 2);
         bt.addLeft(node2, 4);
         bt.addRight(node2, 5);
 
-        Node node3 = bt.addRight(root, 3);
+        Node node3 = bt.addRight(node1, 3);
         bt.addLeft(node3, 6);
         bt.addRight(node3,7);
 
