@@ -5,8 +5,10 @@ public class GraphTest {
     public static void main(String args[]){
         Graph graph = getGraphExample2();
         graph.printGraph();
-        graph.removeVertex("2");
-        graph.printGraph();
+//        graph.removeVertex("2");
+//        graph.printGraph();
+
+
     }
 
     public static Graph getGraphExample1(){
@@ -37,6 +39,34 @@ public class GraphTest {
         graph.addEdge("E", "G", 1);
         graph.addEdge("G", "E", 1);
         graph.addEdge("F", "E", 1);
+        return graph;
+    }
+
+    public static Graph getDirectedGraphExample(){
+        Graph graph = new Graph();
+
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("E");
+        graph.addVertex("F");
+        graph.addVertex("G");
+        graph.addVertex("H");
+        graph.addVertex("x");
+
+        graph.addEdge("A", "B", 1);
+        graph.addEdge("B", "C", 1);
+        graph.addEdge("B", "H", 1);
+        graph.addEdge("C", "E", 1);
+        graph.addEdge("C", "D", 1);
+        graph.addEdge("H", "E", 1);
+        graph.addEdge("E", "F", 1);
+        graph.addEdge("E", "G", 1);
+        graph.addEdge("H", "E", 1);
+        graph.addEdge("F", "X", 1);
+        graph.addEdge("G", "X", 1);
+        graph.addEdge("D", "X", 1);
         return graph;
     }
 

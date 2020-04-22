@@ -82,7 +82,7 @@ public class LongestPalindromSubString {
 
 
     /**
-     * Add $,# and @, just to make the string as even length and odd length of palindrom.
+     * Add $,# and @, just to make the string as even length to odd length of palindrom.
      * Example: aba => $#a#b#a#@
      * @param s
      * @return
@@ -98,7 +98,7 @@ public class LongestPalindromSubString {
     }
 
     public static void main(String args[]){
-        String text = "aaabbasdaa";
+        String text = "aaabbaasdaa";
         String str = getPalindrom(text);
         System.out.println(str);
     }

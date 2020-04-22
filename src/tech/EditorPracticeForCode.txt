@@ -1,0 +1,28 @@
+public void buildBST(int[] a){
+    if(a.length <= 0)
+        return;
+
+    BinaryTree bt = new BinaryTree(a[0]);
+    Node root = bt.getRoot();
+
+    for(int i = 1; i < a.length; i++){
+
+    }
+
+}
+
+private void addNodeInBST(Node root, int value){
+    if(root == null){
+        root = new Node(value);
+    }
+
+    if(root.value > value){
+        addNodeInBST(root.left, value);
+    }
+
+    if(root.value <= value){
+        addNodeInBST(root.right, value);
+    }
+}
+
+int[] a = new int[]{10, 6, 12, 8, 15, 11, 13, 1, 3};

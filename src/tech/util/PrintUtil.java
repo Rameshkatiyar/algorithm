@@ -1,5 +1,7 @@
 package tech.util;
 
+import java.util.List;
+
 public class PrintUtil {
 
     public static void printArray(String msg, int[] a){
@@ -10,5 +12,10 @@ public class PrintUtil {
         }
         System.out.print("]");
         System.out.println("");
+    }
+
+    public static void printList(List<Integer> listOfInteger){
+        listOfInteger.stream()
+                .forEach(System.out::println);
     }
 }
